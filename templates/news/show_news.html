@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	{{ news.news_title }}
+{% endblock %}
+
+{% block content %}
+	<h1>{{ news.news_title }}</h1>
+    <img src="{% static news.news_image %}" alt="" width="400" style="float:right;">
+    <p>
+        {{ news.news_content }}
+    </p>
+    <p>Author: {{ news.news_author }}</p>
+    <p>Category: {{ news.news_category }}</p>
+{% if user.is_authenticated %}
+    <p><a href="{% url 'update_news' news.pk %}" class="btn btn-success">Update news</a></p>
+    <p><a href="{% url 'delete_news' news.pk %}" class="btn btn-danger">Delete news</a></p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Send message {% endblock title %}
+{% block content %}
+    <h2 class="mt-5 text-center">Send message</h2>
+    <form method="post" class="mt-2 w-100" style="margin: 0 auto;">{% csrf_token %}
+        <input type="number" min="100" max="999" name="num1"> -
+        <input type="number" min="100" max="999" name="num2">
+        <button type="submit" class="btn btn-primary mt-2 w-25 mb-5">Check numbers</button>
+    </form>
+{% endblock content %}

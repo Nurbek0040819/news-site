@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Superuser form
+{% endblock %}
+
+{% block content %}
+	<form action="" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend>Send message form</legend>
+    <p>
+        <label for="email">Where:</label>
+        <input type="email" name="email" class="form-control" id="email">
+    </p>
+    <p>
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" class="form-control" id="subject">
+    </p>
+    <p>
+        <label for="message">text:</label>
+        <textarea name="message" class="form-control"></textarea>
+    </p>
+    <input type="submit" value="Send message" class="form-control btn btn-success">
+</fieldset>
+</form>
+{% endblock %}
